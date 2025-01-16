@@ -1,0 +1,10 @@
+class Solution:
+    def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:
+        nums3 = []
+        for num1 in nums1:
+            for num2 in nums2:
+                nums3.append(num1^num2)
+        acc = 0
+        for i in nums3:
+            acc = acc ^ i 
+        return acc
