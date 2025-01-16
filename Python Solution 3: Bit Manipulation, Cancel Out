@@ -1,0 +1,24 @@
+class Solution:
+    def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:
+        #if the length of nums1 is even then nums2 is canceled out
+        # if the length of nums1 is odd then nums2 is considered once
+        # if the length of nums2 is even then nums1 is canceld out
+        # if the length of nums2 is odd then nums1 is considered once
+        acc = 0
+        if len(nums1)%2 == 0 and len(nums2)%2 == 0:
+            return 0
+        elif len(nums1)%2 == 0 and len(nums2)%2 == 1:
+            for num1 in nums1:
+                acc = acc ^ num1
+            return acc
+        elif len(nums1)%2 == 1 and len(nums2)%2 == 0:
+            for num2 in nums2:
+                acc = acc ^ num2
+            return acc
+        elif len(nums1)%2 == 1 and len(nums2)%2 == 1:
+            for num1 in nums1:
+                acc = acc^num1
+            for num2 in nums2:
+                acc = acc^num2
+            return acc
+        return 0
